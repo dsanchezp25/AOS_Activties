@@ -1,0 +1,10 @@
+#!/bin/bash
+gnome-terminal
+cd microservicio2_configuration_server || exit
+mvn clean package && mvn spring-boot:run
+if [ $? -ne 0 ]; then
+      echo "Failed to build microservicio2_configuration_server"
+      exit 1
+fi
+echo "microservicio2_configuration_server built successfully"
+

@@ -1,0 +1,88 @@
+#!/bin/bash
+
+# Ejecutar script_config_server en segundo plano sin esperar a que termine
+gnome-terminal -- bash -c "nohup ./script_config_server > config_server.log 2>&1 & exec bash"
+
+
+# Continuar con el resto de microservicios en el script principal
+cd microservicio1_eureka_server || exit
+mvn clean package
+if [ $? -ne 0 ]; then
+      echo "Failed to build microservicio1_eureka_server"
+      exit 1
+fi
+echo "microservicio1_eureka_server built successfully"
+
+cd ../microservicio3 || exit
+mvn clean package
+if [ $? -ne 0 ]; then
+      echo "Failed to build microservicio3"
+      exit 1
+fi
+echo "microservicio3 built successfully"
+
+cd ../microservicio4 || exit
+mvn clean package
+if [ $? -ne 0 ]; then
+      echo "Failed to build microservicio4"
+      exit 1
+fi
+echo "microservicio4 built successfully"
+
+cd ../microservicio5 || exit
+mvn clean package
+if [ $? -ne 0 ]; then
+      echo "Failed to build microservicio5"
+      exit 1
+fi
+echo "microservicio5 built successfully"
+
+cd ../microservicio6 || exit
+mvn clean package
+if [ $? -ne 0 ]; then
+      echo "Failed to build microservicio6"
+      exit 1
+fi
+echo "microservicio6 built successfully"
+
+
+
+cd ../microservicio1_eureka_server || exit
+mvn clean package
+if [ $? -ne 0 ]; then
+      echo "Failed to build microservicio1_eureka_server"
+      exit 1
+fi
+echo "microservicio1_eureka_server built successfully"
+
+cd ../microservicio3 || exit
+mvn clean package
+if [ $? -ne 0 ]; then
+      echo "Failed to build microservicio3"
+      exit 1
+fi
+echo "microservicio3 built successfully"
+
+cd ../microservicio4 || exit
+mvn clean package
+if [ $? -ne 0 ]; then
+      echo "Failed to build microservicio34"
+      exit 1
+fi
+echo "microservicio4 built successfully"
+
+cd ../microservicio5 || exit
+mvn clean package
+if [ $? -ne 0 ]; then
+      echo "Failed to build microservicio5"
+      exit 1
+fi
+echo "microservicio5 built successfully"
+
+cd ../microservicio6 || exit
+mvn clean package
+if [ $? -ne 0 ]; then
+      echo "Failed to build microservicio6"
+      exit 1
+fi
+echo "microservicio6 built successfully"

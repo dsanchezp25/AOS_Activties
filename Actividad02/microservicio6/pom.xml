@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>es.aos.unex</groupId>
-	<artifactId>microservicio5</artifactId>
+	<artifactId>microservicio6</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>microservicio5</name>
+	<name>microservicio6</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
